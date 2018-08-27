@@ -6,17 +6,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" href="<%= BASE_URL %>favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100:300,400,500,700,900|Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="style/main.css">
-<title>Vue Weather App</title>
+<link rel="stylesheet" href="<%= BASE_URL %>style/main.css">
+<title>Vue Weather</title>
 </head>
 <body>
 <noscript>
     <strong>We're sorry but Vue Weather App doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
 </noscript>
 <div class="appTitle">
-    <h1>Vue Weather App</h1>
+    <div>
+        <img src="<%= BASE_URL %>logo.png" alt="Vue Logo">
+        <h1>Vue<br>Weather</h1>
+    </div>
 </div>
-<div id="app">
-</div>
+<div id="app"></div>
 </body>
 </html>

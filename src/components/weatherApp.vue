@@ -1,10 +1,10 @@
 <template>
-    <v-container fluid gird-list-xs>
+    <v-container fluid gird-list-lg>
         <v-layout row wrap>
-            <v-flex xs12 class="mb-3">
+            <v-flex xs12 sm4 offset-sm4 class="mb-3">
                 <h2>{{msg}}</h2>
             </v-flex>
-            <v-flex xs12>
+            <v-flex xs12 sm4 offset-sm4>
                 <section>
                     <v-form ref="form" v-model="valid" lazy-validation required>
                         <v-text-field label="City, Country Code (eg. Toronto, CA)" prepend-icon="place" v-model="city" :rules="empty"></v-text-field>
@@ -13,21 +13,24 @@
                     </v-form>
                 </section>
             </v-flex>
-            <v-flex xs12>
-                <section class="mt-5" v-if="cityName[0]">
-                    <h2>
-                        {{cityName}}, {{country.country}}
-                    </h2>
-                    <span>{{temp.temp}}°C</span><br>
-                    <ul>
-                        <li v-for="wea in weather">{{wea.main}}</li>
-                    </ul>
-                </section>
+            <v-flex xs12 sm4 offset-sm4>
+                <v-card class="mt-5 pa-3" v-if="cityName[0]">
+                    <v-layout row>
+                        <v-flex xs6>
+                            <h2 class="card-title">{{cityName}}, {{country.country}}</h2><br> <img v-bind:src="'http://openweathermap.org/img/w/' + weather[0].icon + '.png'" alt=""> <br>
+                            <ul class="weather-con">
+                                <li v-for="wea in weather">&nbsp;&nbsp;&nbsp;{{wea.main}}&nbsp;&nbsp;&nbsp;</li>
+                            </ul>
+                        </v-flex>
+                        <v-flex xs6 d-flex align-center justify-center>
+                            <span class="temp">{{temp.temp}}°C</span>
+                        </v-flex>
+                    </v-layout>
+                </v-card>
             </v-flex>
         </v-layout>
     </v-container>
 </template>
-
 <script>
 export default {
     name   : 'weatherApp',

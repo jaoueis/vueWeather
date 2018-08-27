@@ -1,6 +1,45 @@
 .appTitle {
-    margin-top: 30px;
+    padding: 30px 15px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
     color: #333333;
-    text-align: center;
+    background: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appTitle div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.appTitle img {
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 5px;
+}
+
+@media (min-width: 600px) {
+    .appTitle {
+        padding: 30px 15%;
+    }
+}
+
+.card-title {
+    font-size: 2rem;
+}
+
+.temp {
+    font-size: 3rem;
+}
+
+.weather-con {
+    padding: 0;
+    list-style-type: none;
+}
+
+.weather-con li {
+    display: inline-block;
 }
