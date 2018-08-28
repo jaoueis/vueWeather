@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <weatherApp msg="Please enter a city in the text field." />
+        <weatherApp />
     </div>
 </template>
 
