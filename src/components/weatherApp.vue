@@ -1,20 +1,17 @@
 <template>
-    <v-container fluid gird-list-lg>
+    <v-container fluid gird-list-xl>
         <v-layout row wrap>
-            <v-flex xs12 sm4 offset-sm4 class="mb-3">
-                <h2>{{msg}}</h2>
-            </v-flex>
-            <v-flex xs12 sm4 offset-sm4>
+            <v-flex xs12 sm6 d-flex align-center justify-center class="pa-3">
                 <section>
                     <v-form ref="form" v-model="valid" lazy-validation required>
-                        <v-text-field label="City, Country Code (eg. Toronto, CA)" prepend-icon="place" v-model="city" :rules="empty"></v-text-field>
-                        <v-btn @click="submit">Search</v-btn>
-                        <v-btn @click="clear">clear</v-btn>
+                        <v-text-field label="Enter City, Country Code (eg. Toronto, CA)" prepend-icon="place" v-model="city" :rules="empty"></v-text-field>
+                        <v-btn @click="submit" class="cta-btn">Search</v-btn>
+                        <v-btn @click="clear" class="cta-btn">clear</v-btn>
                     </v-form>
                 </section>
             </v-flex>
-            <v-flex xs12 sm4 offset-sm4>
-                <v-card class="mt-5 pa-3" v-if="cityName[0]">
+            <v-flex xs12 sm6 class="pa-3">
+                <v-card class="pa-3 weather-board" v-if="cityName[0]">
                     <v-layout row>
                         <v-flex xs6>
                             <h2 class="card-title">{{cityName}}, {{country.country}}</h2><br> <img v-bind:src="'http://openweathermap.org/img/w/' + weather[0].icon + '.png'" alt=""> <br>
@@ -34,9 +31,6 @@
 <script>
 export default {
     name   : 'weatherApp',
-    props  : {
-        msg: String
-    },
     data   : () => ({
         valid   : true,
         city    : '',
